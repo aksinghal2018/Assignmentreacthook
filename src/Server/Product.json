@@ -1,0 +1,11 @@
+{
+    "products":[
+        {"id":1,"pname":"A","price":2345,"quantity":1000},
+        {"id":2,"pname":"B","price":2000,"quantity":2000},
+        {"id":3,"pname":"C","price":345,"quantity":3000},
+        {"id":4,"pname":"D","price":4345,"quantity":4000},
+        {"id":5,"pname":"E","price":5345,"quantity":2000},
+        {"id":6,"pname":"F","price":6345,"quantity":5000},
+        {"id":7,"pname":"G","price":2645,"quantity":1000}
+    ]
+}

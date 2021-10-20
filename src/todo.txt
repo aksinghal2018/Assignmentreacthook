@@ -1,0 +1,23 @@
+weather
+clock
+twitter
+Telegram
+Instagram
+Facebook
+Whatsapp
+Amazon
+Flipkart
+todo
+News
+github 
+Favorities
+youtube
+books
+gmail
+calculator
+add songs,video,movies,pictures
+chat
+CRUD opeartion in Files
+CRUD operation in Blogs
+Paint
+Meeting
