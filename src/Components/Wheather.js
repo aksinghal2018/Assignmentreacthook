@@ -16,7 +16,7 @@ function Wheather() {
                 setLong(position.coords.longitude);
             });
 
-            await fetch(`http://api.weatherapi.com/v1/current.json?key=cc648bc162764de9a7b124243211910&q=Delhi&aqi=no`)
+            await fetch(`http://api.weatherapi.com/v1/current.json?key=`)
                 .then(res => res.json())
                 .then(result => {
                     setData({name:result.location.name,temp:result.current.temp_c})
@@ -29,7 +29,7 @@ function Wheather() {
         
         const cityname=city.current.value;
     if(cityname!=""){
-        await fetch(`http://api.weatherapi.com/v1/current.json?key=cc648bc162764de9a7b124243211910&q=${cityname}&aqi=no
+        await fetch(`http://api.weatherapi.com/v1/current.json?key=&q=${cityname}&aqi=no
         `)
                 .then(res => res.json())
                 .then(result => {
