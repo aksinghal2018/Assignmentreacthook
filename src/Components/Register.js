@@ -25,15 +25,25 @@ export class Register extends Component {
     submit = (event) => {
         event.preventDefault()
         if (this.state.name !== "" && this.state.lastname !== "" && this.state.username !== "" && this.state.email !== "" && this.state.password !== "" && this.state.confirmpassword !== "") {
+            if (this.state.password.length <= 8) {
+                alert("password length should be more than 8 ")
 
-            const dataitem = { name: this.state.name, lastname: this.state.lastname, username: this.state.username, email: this.state.email, password: this.state.password }
+            }
+            else {
+                if (this.state.password != this.state.confirmpassword) {
+                    alert("password and confirm password not match");
+                }
+                else {
+                    const dataitem = { name: this.state.name, lastname: this.state.lastname, username: this.state.username, email: this.state.email, password: this.state.password }
 
-            axios.post('http://localhost:3001/userdetail', dataitem)
-                .then(res => {
-                    console.log(res)
-                    alert("Register Successfully")
-                    window.location.replace("/");
-                })
+                    axios.post('http://localhost:3001/userdetail', dataitem)
+                        .then(res => {
+                            console.log(res)
+                            alert("Register Successfully")
+                            window.location.replace("/");
+                        })
+                }
+            }
         }
         else {
             alert("Field not be empty")
@@ -42,7 +52,7 @@ export class Register extends Component {
     }
     render() {
         return (
-            <div style={{width:"100%",height:"800px",backgroundImage:"url('../images/register.jpg')",backgroundRepeat:"no-repeat",backgroundPosition:"center",backgroundSize:"cover",color:'white'}}>
+            <div style={{ width: "100%", height: "800px", backgroundImage: "url('../images/register.jpg')", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", color: 'white' }}>
                 <Navbar />
                 <div className="container mt-4 border border-primary p-4" style={{ width: "50%", marginBottom: "24px" }}>
                     <h1>Register</h1>

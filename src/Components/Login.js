@@ -1,7 +1,9 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import Navbar from './Navbar'
-
+import { EncryptStorage } from 'encrypt-storage';
+const encryptStorage = new EncryptStorage('secret-key', {
+  });
 export class Login extends Component {
     constructor(props) {
         super(props)
@@ -16,7 +18,7 @@ export class Login extends Component {
         axios.get('http://localhost:3001/userdetail').then(
             data=>{
                 this.state.data=(data.data);
-                
+                console.log(data.data)
             }
         )
 
@@ -36,7 +38,7 @@ export class Login extends Component {
             if(obj!=undefined){
                 if(obj.password===this.state.password){
                     alert("LOGIN SUCCESSFULL");
-                    localStorage.setItem("userdata",JSON.stringify(obj))
+                    encryptStorage.setItem("userdata",JSON.stringify(obj))
                     window.location.replace("/dashboard");
                 }
                 else{

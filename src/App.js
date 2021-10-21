@@ -44,12 +44,12 @@ export class App extends Component {
           <Route path="/aboutus" exact>
             <Aboutus />
           </Route>
-          {(this.state.status==true)?dashboard:<></>
-          }
           <Route path="/" exact>
             <Home />
           </Route>
           
+          {(this.state.status==true)?dashboard:<></>
+          }
           <Route>
             <Noresponse />
           </Route>
